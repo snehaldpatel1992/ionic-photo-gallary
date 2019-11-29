@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { FirebaseAnalytics } from '@ionic-native/firebase-analytics/ngx';
 
 @Component({
@@ -6,12 +6,16 @@ import { FirebaseAnalytics } from '@ionic-native/firebase-analytics/ngx';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page {
+export class Tab1Page implements AfterViewInit {
 
-  constructor(/*private firebaseAnalytics: FirebaseAnalytics*/) {
-/*    this.firebaseAnalytics.logEvent('page_view', {page: 'tab1'})
-        .then((res: any) => console.log(res))
-        .catch((error: any) => console.error(error));*/
+  constructor(private firebaseAnalytics: FirebaseAnalytics) {}
+
+  ngAfterViewInit() {
+    this.firebaseAnalytics.logEvent('select_content', {
+      content_type: 'image',
+      content_id: 'P12453',
+      items: [{ name: 'Kittens' }]
+    });
   }
 
 }

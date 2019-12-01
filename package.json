@@ -27,6 +27,7 @@
     "@ionic/angular": "^4.7.1",
     "@ionic/storage": "^2.2.0",
     "cordova-android": "^8.1.0",
+    "cordova-electron": "^1.1.1",
     "cordova-ios": "^5.0.1",
     "cordova-plugin-androidx": "^1.0.2",
     "cordova-plugin-androidx-adapter": "^1.1.0",
@@ -105,7 +106,8 @@
     },
     "platforms": [
       "ios",
-      "android"
+      "android",
+      "electron"
     ]
   }
 }
